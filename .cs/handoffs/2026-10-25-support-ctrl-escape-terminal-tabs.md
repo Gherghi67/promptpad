@@ -264,3 +264,9 @@ assumed: This handoff is based partly on a compacted summary. Earlier raw timest
 - Switched CLI to Gherghi67, created NEW private https://github.com/Gherghi67/gamepad-terminal directly, and successfully pushed main including b6a2e5a wrap artifacts. No transfer acceptance is needed for that new repo; do not accept the obsolete transfer email.
 - Browser cleanup: Chrome agent tab1043467724, repoCleanupTab binding, initially personal session only. Opened Add account, entered bogdan-gherghina and tried the existing autofilled sign-in once; GitHub rejected it. User has been asked to sign in or delete the work repository themselves. Tab marked for handoff. Do not retry credentials blindly.
 - Updated summary and personal narrative to reflect direct creation and the remaining deletion/authentication blocker. Initial source commit retains historical work-author metadata; later wrap commits use Gherghi <gherghinabogdan7@gmail.com>. Local app/bridge and verified build remain untouched.
+
+### Final publication/wrap handoff
+
+- User chose “I will delete it manually.” Stop attempts to authenticate or delete the work copy. Its deletion is a user-owned follow-up; do not claim it has happened.
+- Verified new personal repository Gherghi67/gamepad-terminal is private and main matched local HEAD after publishing source plus wrap artifacts. Repository-local Git and CS narrative identity are personal. No continuation task created; no global Git identity changed.
+- Publication and wrap are complete on the agent side. This final note is committed/pushed with the summary and narrative reflecting the user-owned cleanup.

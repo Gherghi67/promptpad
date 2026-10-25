@@ -16,4 +16,4 @@ type: narrative
 
 - Personal identity correction: repository-local Git email and CS actor now use gherghinabogdan7@gmail.com; narrative moved to narrative.gherghinabogdan7-gmail-com.md with its index and local context updated. No global Git email changed.
 
-- Cleanup remains pending: the user explicitly authorized deleting bogdan-gherghina/gamepad-terminal, but its CLI token lacks delete_repo scope. Browser has only the personal session; attempted saved work sign-in was rejected. Asked user to sign in to the work account or delete that mistaken repository themselves. Do not call publication fully cleaned up until verified.
+- Cleanup remains pending: the user explicitly authorized deleting bogdan-gherghina/gamepad-terminal, but its CLI token lacks delete_repo scope. Browser has only the personal session; attempted saved work sign-in was rejected. Asked user to sign in to the work account or delete that mistaken repository themselves. The user subsequently said “I will delete it manually”; deletion is now a user-owned follow-up, not unfinished agent work. Personal publication and wrap are complete; do not claim the work copy was deleted.
