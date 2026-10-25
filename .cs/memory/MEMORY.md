@@ -1,0 +1,3 @@
+- [Session narrative — gherghinabogdan7-gmail-com (lab notebook)](narrative.gherghinabogdan7-gmail-com.md): looser-bar work-in-progress; its owner reads it in full on resume, anyone else only the lines the resume digest names; older sections under .cs/narrative-archive/
+- [Native focus and development permissions](project_native_focus_and_permissions.md) records iTerm hotkey focus semantics, the real `shell` accessibility label, and observed ad-hoc-build consent pitfalls.
+- [Personal GitHub identity](user_personal_github.md) identifies Gherghi67 and the personal Git email; the active gh account alone does not identify the personal destination.

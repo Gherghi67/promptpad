@@ -1,0 +1,5 @@
+{"ts":"2026-10-25T16:51:53Z","event":"started","engine":"claude","run_id":"6a802257-baf3-4cf4-b5c9-12b149c3d305","role":"lead","source":"startup","session_id":"671f4923-008d-4e26-a05b-393cb1e8311a","branch":"main"}
+{"ts":"2026-10-25T16:51:58Z","event":"ended","source":"prompt_input_exit","session_id":"671f4923-008d-4e26-a05b-393cb1e8311a","engine":"claude","run_id":"6a802257-baf3-4cf4-b5c9-12b149c3d305","branch":"main"}
+{"ts":"2026-10-25T16:52:10Z","event":"started","engine":"codex","session_id":"01a173fa-08dd-7263-8015-d0b185b1e79e","source":"fresh","run_id":"8328521c-51cb-4f55-871d-bd36c29b9025"}
+{"ts":"2026-10-25T19:16:42Z","event":"rotated","engine":"codex","run_id":"8328521c-51cb-4f55-871d-bd36c29b9025","from":"01a173fa-08dd-7263-8015-d0b185b1e79e","to":"01a1747e-5676-7a50-b040-5992d79e2764","reason":"handoff","handoff":"2026-10-25-support-ctrl-escape-terminal-tabs.md"}
+{"ts":"2026-10-25T19:16:42Z","event":"started","engine":"codex","session_id":"01a1747e-5676-7a50-b040-5992d79e2764","source":"clear","run_id":"8328521c-51cb-4f55-871d-bd36c29b9025"}
