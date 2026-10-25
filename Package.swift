@@ -4,20 +4,20 @@ import Foundation
 
 // The app worker supplies this directory after the standalone core is established.
 var products: [Product] = [
-    .library(name: "GamepadTerminalCore", targets: ["GamepadTerminalCore"]),
-    .library(name: "GamepadTerminalVoice", targets: ["GamepadTerminalVoice"])
+    .library(name: "PromptpadCore", targets: ["PromptpadCore"]),
+    .library(name: "PromptpadVoice", targets: ["PromptpadVoice"])
 ]
 var targets: [Target] = [
-    .target(name: "GamepadTerminalCore", exclude: ["CONTRACT.md"]),
-    .testTarget(name: "GamepadTerminalCoreTests", dependencies: ["GamepadTerminalCore"]),
-    .target(name: "GamepadTerminalVoice", dependencies: ["GamepadTerminalCore"]),
-    .testTarget(name: "GamepadTerminalVoiceTests", dependencies: ["GamepadTerminalVoice", "GamepadTerminalCore"])
+    .target(name: "PromptpadCore", exclude: ["CONTRACT.md"]),
+    .testTarget(name: "PromptpadCoreTests", dependencies: ["PromptpadCore"]),
+    .target(name: "PromptpadVoice", dependencies: ["PromptpadCore"]),
+    .testTarget(name: "PromptpadVoiceTests", dependencies: ["PromptpadVoice", "PromptpadCore"])
 ]
 let packageRoot = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
-if FileManager.default.fileExists(atPath: packageRoot.appendingPathComponent("Sources/GamepadTerminalApp").path) {
-    products.append(.executable(name: "GamepadTerminal", targets: ["GamepadTerminalApp"]))
-    targets.append(.executableTarget(name: "GamepadTerminalApp", dependencies: ["GamepadTerminalCore", "GamepadTerminalVoice"]))
-    targets.append(.testTarget(name: "GamepadTerminalAppTests", dependencies: ["GamepadTerminalApp", "GamepadTerminalCore"]))
+if FileManager.default.fileExists(atPath: packageRoot.appendingPathComponent("Sources/PromptpadApp").path) {
+    products.append(.executable(name: "Promptpad", targets: ["PromptpadApp"]))
+    targets.append(.executableTarget(name: "PromptpadApp", dependencies: ["PromptpadCore", "PromptpadVoice"]))
+    targets.append(.testTarget(name: "PromptpadAppTests", dependencies: ["PromptpadApp", "PromptpadCore"]))
 }
 
-let package = Package(name: "GamepadTerminal", platforms: [.macOS(.v13)], products: products, targets: targets)
+let package = Package(name: "Promptpad", platforms: [.macOS(.v13)], products: products, targets: targets)

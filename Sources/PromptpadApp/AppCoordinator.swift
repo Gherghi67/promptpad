@@ -1,5 +1,5 @@
 import Foundation
-import GamepadTerminalCore
+import PromptpadCore
 
 @MainActor final class AppCoordinator {
     private(set) var state = ApplicationState()

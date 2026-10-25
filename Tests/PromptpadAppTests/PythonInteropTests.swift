@@ -1,8 +1,8 @@
 import XCTest
 import Foundation
 import Darwin
-import GamepadTerminalCore
-@testable import GamepadTerminalApp
+import PromptpadCore
+@testable import PromptpadApp
 
 private final class PythonBridgeFixture {
     let process = Process()

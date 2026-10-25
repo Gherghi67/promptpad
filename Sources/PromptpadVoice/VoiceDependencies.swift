@@ -1,6 +1,6 @@
 import CoreMedia
 import Foundation
-import GamepadTerminalCore
+import PromptpadCore
 
 public enum VoicePermission: Equatable, Sendable {
     case notDetermined, authorized, denied, restricted

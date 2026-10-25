@@ -1,7 +1,7 @@
 import CoreMedia
 import XCTest
-import GamepadTerminalCore
-@testable import GamepadTerminalVoice
+import PromptpadCore
+@testable import PromptpadVoice
 
 @MainActor private final class FakeSink: VoiceAudioSink, @unchecked Sendable {
     nonisolated func append(_ buffer: CMSampleBuffer) {}

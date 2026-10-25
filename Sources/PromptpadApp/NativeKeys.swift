@@ -1,7 +1,7 @@
 import AppKit
 import ApplicationServices
 import Carbon.HIToolbox
-import GamepadTerminalCore
+import PromptpadCore
 
 /// Pure policy shared by API gating and the stricter native-key preflight.
 enum TerminalFocusPolicy {

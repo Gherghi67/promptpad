@@ -13,8 +13,8 @@ alongside the companion; Ctrl+C or SIGTERM shuts it down and removes its socket.
 When packaging, keep the `bridge` package directory together and set its parent
 as the working directory or Python module search path before invoking `-m bridge`.
 
-The companion connects to `/tmp/gamepad-terminal-<getuid()>/bridge.sock`, using
-the version 1 contract in `Sources/GamepadTerminalCore/CONTRACT.md`. Frames have
+The companion connects to `/tmp/promptpad-<getuid()>/bridge.sock`, using
+the version 1 contract in `Sources/PromptpadCore/CONTRACT.md`. Frames have
 a four-byte unsigned big-endian UTF-8 JSON byte length (1...65536), followed by
 the JSON payload. One client and one outstanding request are allowed. There is
 no request replay, action queue, subscription, or arbitrary command endpoint.

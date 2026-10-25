@@ -2,10 +2,10 @@
 
 This file and the public Swift declarations in this directory are the contract
 for the bridge, voice, controller/app, and packaging workers. No runtime bridge,
-UI, or native injection is implemented by the core. Import `GamepadTerminalCore`.
+UI, or native injection is implemented by the core. Import `PromptpadCore`.
 The manifest builds the library and tests alone; when the app worker creates
-`Sources/GamepadTerminalApp`, it also exposes executable product
-`GamepadTerminal`. The native voice implementation lives in the separate GamepadTerminalVoice target.
+`Sources/PromptpadApp`, it also exposes executable product
+`Promptpad`. The native voice implementation lives in the separate PromptpadVoice target.
 There are no downloaded Swift dependencies. Deployment target: macOS 13.
 
 ## Supported terminal strategy
@@ -93,7 +93,7 @@ Options shows local help (a session picker is optional, not a required endpoint)
 
 ## IPC transport
 
-- AF_UNIX stream, exactly `/tmp/gamepad-terminal-<getuid()>/bridge.sock` on both
+- AF_UNIX stream, exactly `/tmp/promptpad-<getuid()>/bridge.sock` on both
   sides. `BridgeProtocol.socketPath(userID:)` is the Swift authority. Do not use
   NSTemporaryDirectory or Python tempfile defaults, which differ by process.
 - Parent directory owned by current UID, mode 0700. Socket owner current UID,

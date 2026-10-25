@@ -2,20 +2,22 @@
 status: active
 created: 2026-10-25
 tags: []
-aliases: ["gamepad-terminal"]
+aliases: ["promptpad", "gamepad-terminal"]
 ---
-# Session: gamepad-terminal
+# Session: Promptpad
 
 **Started:** 2026-10-25 18:51:38
-**Location:** erp-bogdang-mac:/Users/bogdan.gherghina/Documents/gamepad-terminal
+**Location:** erp-bogdang-mac:/Users/bogdan.gherghina/Documents/promptpad
 
 ## Objective
 
-[Describe what you're trying to accomplish in this session]
+Build Promptpad, a macOS gamepad and voice companion for iTerm2.
 
 ## Environment
 
-[Describe the system, server, or context you're working in]
+The project is available at `~/Documents/promptpad`, a symlink to the original
+`~/Documents/gamepad-terminal` directory required by the active Codex sandbox.
+GitHub: https://github.com/Gherghi67/promptpad.
 
 ## Outcome
 

@@ -1,6 +1,6 @@
 import Foundation
 import Darwin
-import GamepadTerminalCore
+import PromptpadCore
 
 /// A private directory and persistent lock inode shared with the Python protocol.
 enum PrivateRuntime {
@@ -38,7 +38,7 @@ private struct TransportFailure: Error { let underlying: Error; let sent: Bool }
 /// Blocking POSIX work lives exclusively on a serial queue. The lock only protects
 /// cancellation/shutdown; the queue owns close(), so descriptor reuse cannot race it.
 private final class SocketTransport: @unchecked Sendable {
-    private let queue = DispatchQueue(label: "GamepadTerminal.bridge")
+    private let queue = DispatchQueue(label: "Promptpad.bridge")
     private let lock = NSLock()
     private var fd: Int32 = -1
     private var cancelled = false

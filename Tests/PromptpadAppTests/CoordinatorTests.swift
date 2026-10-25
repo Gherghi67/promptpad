@@ -1,6 +1,6 @@
 import XCTest
-import GamepadTerminalCore
-@testable import GamepadTerminalApp
+import PromptpadCore
+@testable import PromptpadApp
 
 private let target = TerminalTarget(sessionID: "session-original", windowID: "w", tabID: "t", title: "shell")
 

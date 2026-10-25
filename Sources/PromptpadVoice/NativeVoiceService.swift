@@ -1,5 +1,5 @@
 import Foundation
-import GamepadTerminalCore
+import PromptpadCore
 
 /// Produces review text only. There is no bridge client, terminal insertion, or key injection here.
 /// The application must cancel the current generation immediately on gate loss. `pinnedTarget`

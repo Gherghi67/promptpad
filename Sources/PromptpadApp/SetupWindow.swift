@@ -1,5 +1,5 @@
 import AppKit
-import GamepadTerminalCore
+import PromptpadCore
 
 /// A discoverable launch surface even when macOS hides crowded menu-bar items.
 @MainActor final class SetupWindow: NSWindowController, NSWindowDelegate {
@@ -17,7 +17,7 @@ import GamepadTerminalCore
     init() {
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 620, height: 720),
                               styleMask: [.titled, .closable, .miniaturizable], backing: .buffered, defer: false)
-        window.title = "Gamepad Terminal — Setup"
+        window.title = "Promptpad — Setup"
         window.isReleasedWhenClosed = false
         super.init(window: window)
         window.delegate = self
@@ -51,7 +51,7 @@ import GamepadTerminalCore
         stack.addArrangedSubview(errorLabel)
         acknowledge.target = self; acknowledge.action = #selector(acknowledgePressed)
         stack.addArrangedSubview(acknowledge)
-        stack.addArrangedSubview(NSButton(title: "Quit Gamepad Terminal", target: NSApp, action: #selector(NSApplication.terminate(_:))))
+        stack.addArrangedSubview(NSButton(title: "Quit Promptpad", target: NSApp, action: #selector(NSApplication.terminate(_:))))
         for view in stack.arrangedSubviews {
             view.widthAnchor.constraint(lessThanOrEqualTo: stack.widthAnchor).isActive = true
         }

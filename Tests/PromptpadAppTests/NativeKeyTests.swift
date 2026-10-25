@@ -1,7 +1,7 @@
 import XCTest
 import ApplicationServices
-import GamepadTerminalCore
-@testable import GamepadTerminalApp
+import PromptpadCore
+@testable import PromptpadApp
 
 private actor KeyBridge: BridgeClient {
     var onRequest: (@Sendable () async -> Void)?

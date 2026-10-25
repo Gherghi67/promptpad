@@ -1,7 +1,7 @@
 import XCTest
 import Darwin
-import GamepadTerminalCore
-@testable import GamepadTerminalApp
+import PromptpadCore
+@testable import PromptpadApp
 
 private final class SocketPeer: @unchecked Sendable {
     let client: Int32

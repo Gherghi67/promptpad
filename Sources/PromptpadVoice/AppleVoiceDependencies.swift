@@ -1,7 +1,7 @@
 @preconcurrency import AVFoundation
 import CoreMedia
 import Foundation
-import GamepadTerminalCore
+import PromptpadCore
 @preconcurrency import Speech
 
 private func audioDevices() -> [AVCaptureDevice] {
@@ -53,7 +53,7 @@ private func audioDevices() -> [AVCaptureDevice] {
 /// Only `stopped` crosses that queue, under `lock`. Stop closes the audio gate synchronously;
 /// stopRunning runs off the UI actor, including when startRunning has not returned yet.
 private final class CaptureWorker: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate, @unchecked Sendable {
-    private let queue = DispatchQueue(label: "GamepadTerminalVoice.capture")
+    private let queue = DispatchQueue(label: "PromptpadVoice.capture")
     private let lock = NSLock()
     private var stopped = false
     private let inputID: String?

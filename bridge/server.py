@@ -16,7 +16,7 @@ from .protocol import MAX_FRAME, Failure, decode, encode, error, valid_id, valid
 class PrivateSocket:
     def __init__(self, directory=None):
         self.uid = os.getuid()
-        self.directory = Path(directory or f"/tmp/gamepad-terminal-{self.uid}")
+        self.directory = Path(directory or f"/tmp/promptpad-{self.uid}")
         self.path = self.directory / "bridge.sock"
         self.lock_fd = None
         self.socket_identity = None

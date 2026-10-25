@@ -1,4 +1,16 @@
-# Gamepad Terminal — wrapped 2026-10-25
+# Promptpad — session summary
+
+## 2026-10-25 rename
+
+The project and GitHub repository are now **Promptpad**:
+https://github.com/Gherghi67/promptpad. Current source targets use `Promptpad*`,
+the bundle is `dist/Promptpad.app` with ID `local.promptpad`, and the bridge uses
+`/tmp/promptpad-<uid>/bridge.sock`. `~/Documents/promptpad` is a symlink to the
+original checkout, whose real path is required by the active Codex sandbox.
+The renamed app needs fresh macOS permission grants. Details below record the
+pre-rename wrap and retain historical paths and observations.
+
+## Gamepad Terminal — wrapped 2026-10-25
 
 ## 1. Objective
 

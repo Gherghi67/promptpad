@@ -1,5 +1,5 @@
 import XCTest
-@testable import GamepadTerminalCore
+@testable import PromptpadCore
 
 final class ProtocolTests: XCTestCase {
     let target = TerminalTarget(sessionID: "s1", windowID: "w1", tabID: "t1", title: "shell")
@@ -72,6 +72,6 @@ final class ProtocolTests: XCTestCase {
         XCTAssertNoThrow(try BridgeResponse(id: request.id, target: target, page: good).validate(for: request))
         let bad = ScrollbackPage(target: target, firstLine: 1, oldestLine: 5, newestLine: 30, lines: [])
         XCTAssertThrowsError(try BridgeResponse(id: request.id, target: target, page: bad).validate(for: request))
-        XCTAssertEqual(BridgeProtocol.socketPath(userID: 501), "/tmp/gamepad-terminal-501/bridge.sock")
+        XCTAssertEqual(BridgeProtocol.socketPath(userID: 501), "/tmp/promptpad-501/bridge.sock")
     }
 }

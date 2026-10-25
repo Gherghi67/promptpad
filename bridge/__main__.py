@@ -19,7 +19,7 @@ async def run(connection, api):
     waiting = []
     try:
         await server.start()
-        print(f"Gamepad Terminal bridge ready: {server.private.path}", flush=True)
+        print(f"Promptpad bridge ready: {server.private.path}", flush=True)
         waiting = [asyncio.create_task(stopped.wait()), asyncio.create_task(server.failed.wait())]
         await asyncio.wait(waiting, return_when=asyncio.FIRST_COMPLETED)
     finally:

@@ -1,1 +1,1 @@
-"""Private iTerm2 bridge for Gamepad Terminal (protocol version 1)."""
+"""Private iTerm2 bridge for Promptpad (protocol version 1)."""

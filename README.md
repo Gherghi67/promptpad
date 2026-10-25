@@ -1,4 +1,6 @@
-# Gamepad Terminal
+# Promptpad
+
+Your terminal, controlled by gamepad and voice.
 
 A macOS 13+ menu-bar companion for iTerm2, a DualSense controller, and reviewed
 voice input. Built with Apple's GameController, AVFoundation and Speech APIs,
@@ -15,7 +17,7 @@ bash scripts/build-app.sh
 ```
 
 This builds a release executable without debug symbols for the current Mac, assembles
-`dist/Gamepad Terminal.app`, bundles the bridge and documentation, and verifies
+`dist/Promptpad.app`, bundles the bridge and documentation, and verifies
 an ad-hoc local signature. It neither installs nor launches the app. Set
 `DEVELOPER_DIR` to select another Xcode. Build/module caches stay in `.build`.
 The bundle is for local development, not notarized distribution. Re-running the
@@ -30,7 +32,7 @@ Run the bridge separately, from this repository, with iTerm2 running:
 Or run the bundled copy, without needing the source checkout:
 
 ```sh
-cd "dist/Gamepad Terminal.app/Contents/Resources"
+cd "dist/Promptpad.app/Contents/Resources"
 "$HOME/Library/Application Support/iTerm2/uv/venvs/3.10/bin/python3" -B -m bridge
 ```
 
@@ -38,16 +40,16 @@ cd "dist/Gamepad Terminal.app/Contents/Resources"
 The existing iTerm2 runtime supplies `iterm2`; system Python alone generally
 does not. If needed, explicitly enable iTerm2's Python API in its settings and
 approve its API connection dialog. No script changes these settings. Wait for
-`Gamepad Terminal bridge ready`. Keep that process running; Ctrl+C stops it.
-Then open `dist/Gamepad Terminal.app` in Finder, or run:
+`Promptpad bridge ready`. Keep that process running; Ctrl+C stops it.
+Then open `dist/Promptpad.app` in Finder, or run:
 
 ```sh
-open "dist/Gamepad Terminal.app"
+open "dist/Promptpad.app"
 ```
 
 The setup window opens on launch. Use it (or the 🎮 menu) to enable the controller, select a microphone, and explicitly
 run **Set up Microphone & Speech permissions…**. Use **Set up Accessibility for
-arrows…** and allow Gamepad Terminal in System Settings → Privacy & Security →
+arrows…** and allow Promptpad in System Settings → Privacy & Security →
 Accessibility for D-pad arrow injection. Microphone and Speech Recognition have
 their own entries there. These prompts are user setup steps, never build steps.
 Close the setup window when ready; reopen the app from Finder to show it again.
@@ -57,7 +59,7 @@ before using API controls, which act on the focused session. Native arrows requi
 recognizable terminal Accessibility element and no active iTerm broadcast domain.
 
 The Control+Escape floating iTerm2 hotkey window uses the same controls, including
-L1/R1 navigation between its own tabs. Enable Accessibility for Gamepad Terminal:
+L1/R1 navigation between its own tabs. Enable Accessibility for Promptpad:
 floating hotkey panels can own keyboard focus while another app remains frontmost,
 so the companion needs Accessibility to identify the focused terminal. Keep the
 hotkey window open through recording, review, and X (×) insertion. Hiding it or
@@ -118,13 +120,13 @@ actions. Text and explicit controls always use iTerm's broadcast suppression;
 arrows fail closed if broadcasting is active. Native arrow preflight and delivery
 are not atomic with OS focus changes, so live focus-race testing is still needed.
 
-The private socket is `/tmp/gamepad-terminal-<uid>/bridge.sock` (directory 0700,
+The private socket is `/tmp/promptpad-<uid>/bridge.sock` (directory 0700,
 socket 0600); one app and bridge instance are permitted. No shell-execution,
 clipboard or dictated-text logging endpoint exists. After an uncertain mutation,
 inspect the named terminal before acknowledging the menu error; the action is
 never retried. Restart a failed bridge manually; fresh connections never replay
 actions. See [bridge details](bridge/README.md) and the
-[protocol contract](Sources/GamepadTerminalCore/CONTRACT.md).
+[protocol contract](Sources/PromptpadCore/CONTRACT.md).
 
 ## If no transcript window appears
 
@@ -143,6 +145,15 @@ before retrying. Rebuilding the development app can require authorizing it again
 
 ## Rebuilds and permissions
 
+### Upgrading from Gamepad Terminal
+
+Quit the old companion and stop its bridge before starting Promptpad. Rebuild
+with `bash scripts/build-app.sh`, then start the bridge and
+`dist/Promptpad.app` using the commands above. Both components must be updated:
+Promptpad uses `/tmp/promptpad-<uid>/bridge.sock` and bundle ID `local.promptpad`.
+Grant Microphone, Speech Recognition, and Accessibility access to Promptpad
+through Setup; the old app's grants do not transfer to the new bundle identity.
+
 Quit the companion before rebuilding. Keep the bundle at a stable path when
 testing. Ad-hoc signatures change with executable changes, so macOS may forget
 or retain stale Microphone, Speech Recognition or Accessibility authorization.
@@ -151,9 +162,9 @@ necessary. If permissions remain stuck, a user can intentionally reset only this
 bundle's grants and then reopen it and authorize again:
 
 ```sh
-tccutil reset Microphone local.gamepad-terminal
-tccutil reset SpeechRecognition local.gamepad-terminal
-tccutil reset Accessibility local.gamepad-terminal
+tccutil reset Microphone local.promptpad
+tccutil reset SpeechRecognition local.promptpad
+tccutil reset Accessibility local.promptpad
 ```
 
 These commands are troubleshooting steps, not part of build/start scripts.
@@ -161,14 +172,15 @@ These commands are troubleshooting steps, not part of build/start scripts.
 ## Verification
 
 Current local validation: 78 Swift tests and 33 Python tests pass; the release
-bundle builds and passes signature verification. Live checks confirmed the setup
-window, DualSense detection, bridge connection, permission setup, L1/R1 tab
+bundle builds and passes signature verification. Before the Promptpad rename,
+live checks confirmed the setup window, DualSense detection, bridge connection,
+permission setup, L1/R1 tab
 switching, R2 transcription, and X inserting reviewed text without submission.
 The successful voice test explicitly selected MacBook Pro Microphone.
-Control+Escape tab switching and voice insertion are now live-confirmed,
-including terminal focus while another application remains active. The user
-located the hidden macOS consent alerts and granted Microphone and Speech
-Recognition access; both grants are verified for the current build. Keep the
+Control+Escape tab switching and voice insertion were also confirmed,
+including terminal focus while another application remains active. These live
+results apply to the previous app identity; repeat them after granting Promptpad
+its permissions. Keep the
 intended terminal pane focused through recording, Review and X (×) insertion;
 changing the target cancels the dictation. Native arrows and overlay mouse
 dismissal remain manual checks.

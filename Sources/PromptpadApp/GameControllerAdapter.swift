@@ -1,6 +1,6 @@
 import Foundation
 @preconcurrency import GameController
-import GamepadTerminalCore
+import PromptpadCore
 
 /// Hardware-independent snapshots also let tests simulate disconnects and held inputs.
 struct ControllerSnapshot: Sendable {

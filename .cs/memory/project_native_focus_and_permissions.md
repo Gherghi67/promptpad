@@ -12,4 +12,4 @@ type: project
 - Microphone and Speech Recognition prompts can be hidden on another Space/display. In this session the user found and approved them manually after an authorized app-specific reset; TCC metadata confirmed both grants. Do not mistake an invisible prompt for a missing request or repeat resets blindly.
 - Keep the same terminal target focused through hold, release, Review, and X (×) insertion. A changed target cancels an uninserted draft; acknowledgment is necessary after a latched error. Never acknowledge an uncertain send merely to enable a retry.
 
-Evidence: Sources/GamepadTerminalApp/NativeKeys.swift, bridge/backend.py, and .cs/handoffs/2026-10-25-support-ctrl-escape-terminal-tabs.md. Live hotkey tabs and voice insertion were both confirmed on 2026-10-25.
+Evidence: Sources/PromptpadApp/NativeKeys.swift, bridge/backend.py, and .cs/handoffs/2026-10-25-support-ctrl-escape-terminal-tabs.md. Live hotkey tabs and voice insertion were both confirmed on 2026-10-25.

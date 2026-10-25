@@ -1,7 +1,7 @@
 import AppKit
 @preconcurrency import ApplicationServices
-import GamepadTerminalCore
-import GamepadTerminalVoice
+import PromptpadCore
+import PromptpadVoice
 
 @MainActor private final class PreviewPanel: NSPanel {
     override var canBecomeKey: Bool { false }
@@ -17,7 +17,7 @@ import GamepadTerminalVoice
     override init() {
         panel = PreviewPanel(contentRect: NSRect(x: 0, y: 0, width: 640, height: 344),
                         styleMask: [.titled, .closable, .nonactivatingPanel], backing: .buffered, defer: false)
-        panel.title = "Gamepad Terminal"
+        panel.title = "Promptpad"
         // iTerm's floating hotkey windows can sit at status-window level.
         panel.level = NSWindow.Level(rawValue: NSWindow.Level.statusBar.rawValue + 1)
         panel.hidesOnDeactivate = false
@@ -264,7 +264,7 @@ import GamepadTerminalVoice
         else { overlay.hide() }
     }
     static let help = """
-    Gamepad Terminal — focus an iTerm2 terminal pane first
+    Promptpad — focus an iTerm2 terminal pane first
 
     L1 / R1: previous / next tab
     D-pad: arrows (Accessibility permission required)
@@ -332,7 +332,7 @@ import GamepadTerminalVoice
     }
 }
 
-@main enum GamepadTerminalMain {
+@main enum PromptpadMain {
     @MainActor static func main() {
         umask(0o077)
         do {

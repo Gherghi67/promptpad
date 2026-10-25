@@ -1,5 +1,5 @@
 import XCTest
-@testable import GamepadTerminalCore
+@testable import PromptpadCore
 
 final class CoreTests: XCTestCase {
     let target = TerminalTarget(sessionID: "session-a", windowID: "window-a", tabID: "tab-a", title: "shell")

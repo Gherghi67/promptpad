@@ -1,4 +1,4 @@
-# Gamepad Terminal — implementation brief
+# Promptpad — implementation brief
 
 Build a usable macOS menu-bar companion for controlling iTerm2 with a PS5
 DualSense controller. Voice fills in the text that buttons cannot. The user
@@ -68,7 +68,7 @@ authorized implementation and explicitly requested agent orchestration.
 - Sources/, Package.swift, Tests/ for the native app and testable core.
 - bridge/ with the Python bridge and meaningful unittest tests in bridge/tests/.
 - Resources/Info.plist with microphone/speech usage descriptions; scripts/ with
-  a reproducible build-app.sh producing dist/Gamepad Terminal.app. Ad-hoc signing
+  a reproducible build-app.sh producing dist/Promptpad.app. Ad-hoc signing
   is acceptable for local development; explain permission resets on rebuilds.
 - Install/start instructions and a controller mapping table in README.md.
   Build and verify before any installation. Do not silently edit system/iTerm

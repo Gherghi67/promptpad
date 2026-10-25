@@ -142,7 +142,7 @@ public enum BridgeProtocol {
     public static let reconnectDelays: [TimeInterval] = [0.25, 0.5, 1, 2, 4, 5]
 
     /// Both processes use getuid(), not a username or a per-process temporary directory.
-    public static func socketDirectory(userID: UInt32) -> String { "/tmp/gamepad-terminal-\(userID)" }
+    public static func socketDirectory(userID: UInt32) -> String { "/tmp/promptpad-\(userID)" }
     public static func socketPath(userID: UInt32) -> String { socketDirectory(userID: userID) + "/bridge.sock" }
 
     public static func encode<T: Encodable>(_ message: T) throws -> Data {
