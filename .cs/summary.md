@@ -7,7 +7,7 @@ Complete the native macOS DualSense/iTerm2 companion, extend working normal-wind
 ## 2. Environment
 
 - Worktree: `/Users/bogdan.gherghina/Documents/gamepad-terminal`; branch `main`.
-- Private remote: https://github.com/Gherghi67/gamepad-terminal (`origin`). Personal identity: `gherghinabogdan7@gmail.com`; narrative actor: `gherghinabogdan7-gmail-com`. Transfer from the mistakenly selected account is pending receiving-account email confirmation; wrap artifacts will follow.
+- Private remote: https://github.com/Gherghi67/gamepad-terminal (`origin`). Personal identity: `gherghinabogdan7@gmail.com`; narrative actor: `gherghinabogdan7-gmail-com`. The personal repository was created directly and source plus wrap artifacts were pushed. The user rejected the transfer approach; deletion of the mistakenly created work-account copy is pending browser authentication.
 - macOS arm64, iTerm2 3.7.6, full Xcode toolchain. Swift package uses AppKit, GameController, AVFoundation and Speech; Python bridge uses the installed iTerm2 Python environment.
 - Working bundle: `dist/Gamepad Terminal.app`, bundle ID `local.gamepad-terminal`; generated bundle/caches are ignored. Companion and bridge were left running with controls enabled, DualSense connected, and MacBook Pro Microphone selected. Recheck runtime state before launching duplicates.
 
@@ -24,7 +24,7 @@ Complete the native macOS DualSense/iTerm2 companion, extend working normal-wind
 - This continuation corrected bridge hotkey routing and AX focus recognition, preserved strict native-arrow gating, and bounded AX messaging latency.
 - Semantic target failures now cancel local workflows without treating them as transport loss. Losing a target after confirmed insertion ends tracking without replaying text; uncertain-send errors remain latched.
 - Preview uses a nonactivating panel above floating hotkey windows with Close/Open Setup; Close hides errors without unlocking controls. PS5 confirmation is labelled X (×). Setup retains useful metadata-only diagnostics.
-- Initially pushed source to the active work account by mistake; requested transfer of that private repository to the user-specified personal account `Gherghi67`. Saved durable native-focus/permission findings and this wrap summary; rotate the configured narrative through `cs`, not manual archival.
+- Initially pushed source to the active work account by mistake. At the user’s correction, created a new private `Gherghi67/gamepad-terminal` directly and pushed source plus wrap artifacts. The user authorized deleting the mistaken work copy; CLI deletion lacks the delete_repo scope, so browser cleanup awaits work-account authentication. Saved durable native-focus/permission findings and this wrap summary; rotate the configured narrative through `cs`, not manual archival.
 
 ## 5. Key Files & Outputs
 
